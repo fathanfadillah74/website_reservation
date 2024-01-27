@@ -1,0 +1,47 @@
+<% if (data && data.supportedLanguage && data.supportedLanguage.length){ %>
+<div id="dropdownLanguage" class="dropdown-language">
+  <button
+    id=""
+    class="selected-lang"
+    on="tap:dropdownLanguage.toggleClass(class='is-active')"
+  >
+    <amp-img
+      src="flag/<%= data.selectedLanguage %>_flag.png"
+      alt="<%= data.selectedLanguage %>"
+      width="48"
+      height="48"
+      layout="intrinsic"
+    >
+      <noscript>
+        <img
+          src="flag/<%= data.selectedLanguage %>_flag.png"
+          alt="<%= data.selectedLanguage %>"
+        />
+      </noscript>
+    </amp-img>
+  </button>
+
+  <div id="dropLangList" class="dropdown-content">
+    <% data.supportedLanguage.forEach((lang)=>{ %>
+    <a
+      href="/<%= lang %>"
+      class="language-item langpicker"
+      data-lang="<%= lang %>"
+    >
+      <amp-img
+        src="flag/<%= lang %>_flag.png"
+        alt="<%= lang %>"
+        width="48"
+        height="48"
+        layout="intrinsic"
+      >
+        <noscript>
+          <img src="flag/<%= lang %>_flag.png" alt="<%= lang %>" />
+        </noscript>
+      </amp-img>
+      <span><%= data.langDesc[lang] %></span>
+    </a>
+    <%}) %>
+  </div>
+</div>
+<% } %>

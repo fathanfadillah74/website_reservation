@@ -1,0 +1,22 @@
+<section class="main-page">
+  <div class="main-title">
+    <h1><%= layout.language.mainTitle %></h1>
+  </div>
+
+  <div class="content">
+    <%~ replaceLinks %> <%~ replaceBannerDownload %>
+    <div class="desc">
+      <span class="big"> <%=layout.language.spanTitle %> </span>
+      <span class="normal"> <%=layout.language.contactUs %> </span>
+    </div>
+    <%~ replaceContacts %>
+    <div class="bottom-text">
+      <p>
+        <%= layout.language.bottomCopyRight %> &copy; <%= year %> <%=
+        layout.brand %>.
+      </p>
+      <p><%= layout.language.copyrightProtected %></p>
+      <p><%= layout.language.version %> <%= HelpcenterWebVersion %></p>
+    </div>
+  </div>
+</section>
